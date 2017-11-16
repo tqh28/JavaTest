@@ -30,9 +30,17 @@ public class Person implements Comparable<Person>{
 	}
 	
 	@Override
-	public int compareTo(Person o) {
-		return age - o.getAge();
+	public int compareTo(Person o) {// o must be a Person, not Object
+		return age - o.getAge(); // positive
+//		return o.getAge() - age; // negative
 	}
 	
+	/** Error, o must be a Person, not Object
+	@Override
+	public int compareTo(Object o) {
+		return age - ((Person) o).getAge(); // positive
+//		return o.getAge() - age; // negative
+	}
+	*/
 	
 }
